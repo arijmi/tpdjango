@@ -1,0 +1,26 @@
+<!-- borrower_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Borrowers{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Borrowers List</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Book</th>
+            <th>Borrow Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for borrower in borrowers %}
+        <tr>
+            <td>{{ borrower.name }}</td>
+            <td>{{ borrower.book.title }}</td>
+            <td>{{ borrower.borrow_date }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
